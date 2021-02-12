@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ReactComponent as ArrowIcon } from '../../assets/svg/down-arrow.svg';
+import { useClickAwayListner } from '../../hooks';
 import { Options } from './Options';
 import { IOption, ISelectProps } from './Select.interface';
 import { Selectbox, SelectWrapper } from './Select.style';
@@ -11,6 +12,8 @@ export function CustomSelect({
   disabled = false,
   onChange,
 }: ISelectProps) {
+  const wrapperRef = React.useRef<HTMLDivElement | null>(null);
+  const selectboxRef = React.useRef<HTMLDivElement | null>(null);
   const [open, toggleOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<IOption>(
     initValue(defaultValue, items)
@@ -31,12 +34,18 @@ export function CustomSelect({
   };
 
   const displayName = React.useMemo(() => {
-    return selected.name;
-  }, [selected]);
+    return items.length > 0 ? selected.name : '';
+  }, [selected, items]);
+
+  useClickAwayListner(open, wrapperRef, selectboxRef, onClickSelectbox);
 
   return (
-    <SelectWrapper>
-      <Selectbox isOpen={open} disabled={disabled} onClick={onClickSelectbox}>
+    <SelectWrapper ref={wrapperRef}>
+      <Selectbox
+        isOpen={open}
+        disabled={disabled}
+        onClick={onClickSelectbox}
+        ref={selectboxRef}>
         <span>{displayName}</span>
         <ArrowIcon />
       </Selectbox>

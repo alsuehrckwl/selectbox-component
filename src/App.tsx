@@ -30,7 +30,7 @@ function App() {
       <Row>
         <Title>Medium</Title>
         <Select
-          items={Select1}
+          items={[]}
           onChange={onChangeInput}
           size="medium"
           defaultValue={'b'}
