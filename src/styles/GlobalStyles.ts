@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 const GlobalStyles = createGlobalStyle`
 	${reset}
@@ -10,24 +10,10 @@ const GlobalStyles = createGlobalStyle`
       width: 100%;
       height: 100%;
       background-color: #ffffff;
-      font-family: 'Spoqa Han Sans Neo';
+      font-size: 12px;
     }
     #root{
       width: 100%;
-    }
-    a {
-      text-decoration: none;
-      cursor: pointer;
-    }
-    button, select {
-      cursor: pointer;
-      font-family: 'Spoqa Han Sans Neo';
-    }
-    select {
-      height: 32px;
-      padding: 4px 8px;
-      border: none;
-      font-size: 12px;
     }
 `;
 
