@@ -6,6 +6,7 @@ import { SelectWrapper } from './Select.style';
 export function NativeSelect({
   items,
   defaultValue,
+  size,
   disabled = false,
   onChange,
 }: ISelectProps) {
@@ -20,6 +21,7 @@ export function NativeSelect({
   return (
     <SelectWrapper>
       <select
+        className={size}
         defaultValue={defaultValue}
         disabled={disabled}
         onChange={onChangeSelect}>

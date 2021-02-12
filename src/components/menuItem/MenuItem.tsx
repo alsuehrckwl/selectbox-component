@@ -1,50 +1,6 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
-import { IOption } from '../select/Select.interface';
-
-interface IProps {
-  item: IOption;
-  selectedValue: string | number | undefined;
-  defaultValue: string | number | undefined;
-  disabled: boolean;
-  onClickMenuItem?: (item: IOption) => void;
-}
-
-interface IMenuProps {
-  selected: boolean;
-  disabled: boolean;
-}
-
-const Menu = styled.li<IMenuProps>`
-  height: 100%;
-  width: 100%;
-  padding: 8px 16px;
-  background-color: ${(props) => (props.selected ? '#f3f3f3' : 'transparent')};
-
-  &:hover {
-    background-color: #eaf8ff;
-    cursor: pointer;
-  }
-
-  span {
-    font-weight: ${(props) => (props.selected ? 'bold' : 'normal')};
-  }
-
-  ${(props) =>
-    props.disabled &&
-    css`
-      background-color: #f7f7f7;
-
-      &:hover {
-        background-color: #f7f7f7;
-        cursor: default;
-      }
-
-      span {
-        color: #cecece;
-      }
-    `}
-`;
+import { IProps } from './MenuItem.interface';
+import { Menu } from './MenuItem.style';
 
 export const MenuItem: React.FC<IProps> = ({
   item,

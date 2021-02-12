@@ -20,7 +20,6 @@ export function Options({
           <MenuItem
             key={item.id}
             item={item}
-            disabled={false}
             defaultValue={defaultValue}
             selectedValue={selectedValue}
             onClickMenuItem={onChangeItem}

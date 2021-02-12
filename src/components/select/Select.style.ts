@@ -13,7 +13,7 @@ export const SelectWrapper = styled.div`
     z-index: 2;
     min-width: 120px;
     width: 100%;
-    padding: 8px;
+    padding: 9px;
     border: 1px solid;
     border-color: #dedede;
     border-radius: 2px;
@@ -48,13 +48,31 @@ export const SelectWrapper = styled.div`
         transform: rotate(180deg);
       }
     }
+
+    &.medium {
+      height: 28px;
+      padding: 4px 8px;
+
+      + .native-select-icon {
+        top: 8px;
+      }
+    }
+
+    &.small {
+      height: 24px;
+      padding: 2px 8px;
+
+      + .native-select-icon {
+        top: 6px;
+      }
+    }
   }
 
   .native-select-icon {
     z-index: 1;
     position: absolute;
-    top: 12px;
-    right: 8px;
+    top: 11px;
+    right: 9px;
     height: 12px;
     width: 12px;
     fill: #bdbdbd;
@@ -91,6 +109,7 @@ export const Selectbox = styled.div<ISelectboxProps>`
   }
 
   span {
+    font-size: 12px;
     line-height: normal;
   }
 
