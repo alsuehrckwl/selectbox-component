@@ -12,8 +12,9 @@ export const SelectWrapper = styled.div`
   select {
     z-index: 2;
     min-width: 120px;
+    height: 34px;
     width: 100%;
-    padding: 9px;
+    padding: 8px;
     border: 1px solid;
     border-color: #dedede;
     border-radius: 2px;
