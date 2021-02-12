@@ -10,6 +10,7 @@ export function CustomSelect({
   items,
   defaultValue,
   disabled = false,
+  size = 'large',
   onChange,
 }: ISelectProps) {
   const wrapperRef = React.useRef<HTMLDivElement | null>(null);
@@ -45,6 +46,7 @@ export function CustomSelect({
         isOpen={open}
         disabled={disabled}
         onClick={onClickSelectbox}
+        size={size}
         ref={selectboxRef}>
         <span>{displayName}</span>
         <ArrowIcon />
@@ -53,6 +55,7 @@ export function CustomSelect({
       <Options
         isOpen={open}
         items={items}
+        size={size}
         defaultValue={defaultValue}
         selectedValue={selected.value}
         onChangeItem={onChangeItem}

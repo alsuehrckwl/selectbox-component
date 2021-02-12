@@ -17,4 +17,14 @@ export interface ISelectProps {
 export interface ISelectboxProps {
   isOpen: boolean;
   disabled: boolean;
+  size: string;
+}
+
+export interface IOptionsProps {
+  isOpen: boolean;
+  size: string;
+  items: Array<IOption>;
+  defaultValue?: string | number | undefined;
+  selectedValue: string | number | undefined;
+  onChangeItem?: (item: IOption) => void;
 }

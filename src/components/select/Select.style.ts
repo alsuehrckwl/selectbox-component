@@ -90,6 +90,10 @@ export const Selectbox = styled.div<ISelectboxProps>`
     transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
+  span {
+    line-height: normal;
+  }
+
   ${(props) =>
     props.disabled &&
     css`
@@ -104,4 +108,58 @@ export const Selectbox = styled.div<ISelectboxProps>`
         color: #cecece;
       }
     `}
+
+  ${(props) => {
+    const { size } = props;
+
+    if (size === 'large') {
+      return css`
+        height: 34px;
+      `;
+    } else if (size === 'medium') {
+      return css`
+        height: 28px;
+        padding: 4px 8px;
+      `;
+    } else if (size === 'small') {
+      return css`
+        height: 24px;
+        padding: 2px 8px;
+      `;
+    }
+  }}
+`;
+
+export const OptionsWrapper = styled.ul<{ size: string }>`
+  z-index: 1;
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 0px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.1);
+
+  ${(props) => {
+    const { size } = props;
+
+    if (size === 'large') {
+      return css`
+        top: 34px;
+      `;
+    } else if (size === 'medium') {
+      return css`
+        top: 28px;
+      `;
+    } else if (size === 'small') {
+      return css`
+        top: 24px;
+      `;
+    }
+  }}
 `;

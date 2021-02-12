@@ -25,7 +25,7 @@ export function NativeSelect({
         onChange={onChangeSelect}>
         {items.length > 0 &&
           items.map((item: IOption) => (
-            <option key={item.id} value={item.value}>
+            <option key={item.id} value={item.value} disabled={item.disabled}>
               {item.name}
             </option>
           ))}
