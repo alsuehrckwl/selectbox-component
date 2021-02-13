@@ -47,6 +47,7 @@ export function CustomSelect({
       if (code === 13 || code === 32) {
         onChangeItem(items.filter((item) => item.id === keyDownId)[0]);
       } else if (code === 27) {
+        setKeyDownId(selected.id);
         onClickSelectbox();
       } else if (code === 40) {
         setKeyDownId(getNext(keyDownId, items));
