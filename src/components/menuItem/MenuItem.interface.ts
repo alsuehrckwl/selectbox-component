@@ -5,7 +5,7 @@ export interface IProps {
   selectedValue: string | number | undefined;
   defaultValue: string | number | undefined;
   onClickMenuItem?: (item: IOption) => void;
-  keyDownItem: number;
+  keyDownId: number | string;
 }
 
 export interface IMenuProps {

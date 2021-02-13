@@ -7,8 +7,9 @@ export const MenuItem: React.FC<IProps> = ({
   selectedValue,
   defaultValue,
   onClickMenuItem,
-  keyDownItem
+  keyDownId,
 }) => {
+  const menuRef = React.useRef<HTMLLIElement | null>(null);
   const { id, name, value, disabled = false } = item;
   const [isSelected, setSelected] = React.useState(false);
 
@@ -31,15 +32,28 @@ export const MenuItem: React.FC<IProps> = ({
   };
 
   const checkFocus = React.useMemo(() => {
-    if (id === keyDownItem) {
+    if (id === keyDownId) {
       return !disabled;
     } else {
       return false;
     }
-  }, [keyDownItem, id, disabled])
+  }, [keyDownId, id, disabled]);
+
+  React.useEffect(() => {
+    if (checkFocus) {
+      if (menuRef.current) {
+        menuRef.current.scrollIntoView({ block: 'nearest' });
+      }
+    }
+  }, [checkFocus, menuRef]);
 
   return (
-    <Menu onClick={onClickMenu} disabled={disabled} selected={isSelected} focused={checkFocus}>
+    <Menu
+      onClick={onClickMenu}
+      disabled={disabled}
+      selected={isSelected}
+      focused={checkFocus}
+      ref={menuRef}>
       <span>{name}</span>
     </Menu>
   );

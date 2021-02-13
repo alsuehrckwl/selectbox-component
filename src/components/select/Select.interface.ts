@@ -1,5 +1,5 @@
 export interface IOption {
-  id: number;
+  id: number | string;
   name: string;
   value: string | number;
   disabled?: boolean;
@@ -27,5 +27,5 @@ export interface IOptionsProps {
   defaultValue?: string | number | undefined;
   selectedValue: string | number | undefined;
   onChangeItem?: (item: IOption) => void;
-  keyDownItem: number;
+  keyDownId: number | string;
 }

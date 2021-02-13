@@ -19,7 +19,7 @@ const Title = styled.p`
 `;
 
 function App() {
-  const onChangeInput = (v: any) => console.log('v', v);
+  const onChangeInput = (v: any) => console.log('select item = ', v);
 
   return (
     <Wrapper>
@@ -59,12 +59,8 @@ function App() {
         />
       </Row>
       <Row>
-        <Title>100 Options</Title>
-        <Select
-          items={Select2}
-          onChange={onChangeInput}
-          size="large"
-        />
+        <Title>Scrolling</Title>
+        <Select items={Select2} onChange={onChangeInput} size="large" />
       </Row>
     </Wrapper>
   );

@@ -34,10 +34,41 @@ function generateSelect() {
   let arr = [];
 
   for (let i = 0; i < size; i++) {
-    arr.push({id: i, name: i + '', value: i})
+    arr.push({ id: i, name: i + '', value: i });
   }
 
   return arr;
 }
 
-export { Select1, Select2 };
+const Select3 = [
+  {
+    id: 1,
+    name: 'a',
+    value: 'a',
+  },
+  {
+    id: 2,
+    name: 'b',
+    value: 'b',
+    disabled: true,
+  },
+  {
+    id: 3,
+    name: 'c',
+    value: 'c',
+    disabled: true,
+  },
+  {
+    id: 4,
+    name: 'd',
+    value: 'd',
+  },
+  {
+    id: 5,
+    name: 'e',
+    value: 'e',
+    disabled: true,
+  },
+];
+
+export { Select1, Select2, Select3 };
