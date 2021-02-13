@@ -153,17 +153,18 @@ export const Selectbox = styled.div<ISelectboxProps>`
 export const OptionsWrapper = styled.ul<{ size: string }>`
   z-index: 1;
   position: absolute;
-
   left: 0;
   right: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  max-height: 180px;
   width: 100%;
   margin-top: 8px;
   padding: 8px 0px;
   background-color: #fff;
   box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 
   ${(props) => {
     const { size } = props;

@@ -7,8 +7,9 @@ export const MenuItem: React.FC<IProps> = ({
   selectedValue,
   defaultValue,
   onClickMenuItem,
+  keyDownItem
 }) => {
-  const { name, value, disabled = false } = item;
+  const { id, name, value, disabled = false } = item;
   const [isSelected, setSelected] = React.useState(false);
 
   React.useEffect(() => {
@@ -29,8 +30,16 @@ export const MenuItem: React.FC<IProps> = ({
     }
   };
 
+  const checkFocus = React.useMemo(() => {
+    if (id === keyDownItem) {
+      return !disabled;
+    } else {
+      return false;
+    }
+  }, [keyDownItem, id, disabled])
+
   return (
-    <Menu onClick={onClickMenu} disabled={disabled} selected={isSelected}>
+    <Menu onClick={onClickMenu} disabled={disabled} selected={isSelected} focused={checkFocus}>
       <span>{name}</span>
     </Menu>
   );

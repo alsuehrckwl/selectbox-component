@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Select1 } from './common/constants';
+import { Select1, Select2 } from './common/constants';
 import Select from './components/select';
 
 const Wrapper = styled.div`
@@ -56,6 +56,14 @@ function App() {
           onChange={onChangeInput}
           size="large"
           isNative={true}
+        />
+      </Row>
+      <Row>
+        <Title>100 Options</Title>
+        <Select
+          items={Select2}
+          onChange={onChangeInput}
+          size="large"
         />
       </Row>
     </Wrapper>

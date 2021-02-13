@@ -10,6 +10,7 @@ export function Options({
   defaultValue,
   selectedValue,
   onChangeItem,
+  keyDownItem
 }: IOptionsProps) {
   if (!isOpen) return null;
 
@@ -23,6 +24,7 @@ export function Options({
             defaultValue={defaultValue}
             selectedValue={selectedValue}
             onClickMenuItem={onChangeItem}
+            keyDownItem={keyDownItem}
           />
         ))}
       </OptionsWrapper>

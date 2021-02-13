@@ -27,4 +27,17 @@ const Select1 = [
   },
 ];
 
-export { Select1 };
+const Select2 = generateSelect();
+
+function generateSelect() {
+  const size = 100;
+  let arr = [];
+
+  for (let i = 0; i < size; i++) {
+    arr.push({id: i, name: i + '', value: i})
+  }
+
+  return arr;
+}
+
+export { Select1, Select2 };

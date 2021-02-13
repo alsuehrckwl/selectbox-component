@@ -34,4 +34,10 @@ export const Menu = styled.li<IMenuProps>`
         color: #cecece;
       }
     `}
+
+   ${(props) =>
+    props.focused &&
+    css`
+      background-color: #f3f3f3;
+    `}
 `;
